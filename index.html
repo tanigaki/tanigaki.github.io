@@ -131,10 +131,9 @@ $('.ui.dropdown').dropdown();
 $('.ui.checkbox').checkbox();
 
 updateSigninStatus = isSignedIn => {
-  console.log('update signin status')
   if (isSignedIn) {
-    getUserData();
-    document.querySelector('#loginStatus').innerHTML = `ログイン済み`
+    const email = getUserData()
+    document.querySelector('#loginStatus').innerHTML = `ログイン済み。ログイン中のメールアドレスは${email}です`
   } else {
     document.querySelector('#loginStatus').innerHTML = `未ログイン`
   }
@@ -146,6 +145,7 @@ getUserData = () => {
     name: profile.getName(),
     email: profile.getEmail()
   }
+  return currentUserData.email
 }
 
 window.gapi.load('client:auth2', () => {
@@ -156,8 +156,6 @@ window.gapi.load('client:auth2', () => {
     const auth = window.gapi.auth2.getAuthInstance()
     auth.isSignedIn.listen(updateSigninStatus)
     updateSigninStatus(auth.isSignedIn.get());
-
-
   });
 });
 
