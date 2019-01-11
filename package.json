@@ -1,0 +1,21 @@
+{
+  "name": "tanigaki.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanigaki/tanigaki.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanigaki/tanigaki.github.io/issues"
+  },
+  "homepage": "https://github.com/tanigaki/tanigaki.github.io#readme",
+  "devDependencies": {}
+}

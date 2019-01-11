@@ -1,10 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="https://apis.google.com/js/api.js"></script>
+  <!-- Custom Dimension Settings -->
+  <script>
+  var dataLayer = [];
+  dataLayer.push({
+    'loginStatus': '未ログイン', // ログインステータス
+    'userID': '2019010802' // ユーザーID
+  });
+
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src =
+      'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-P7JKFS5');
+  </script>
+  <!-- End Google Tag Manager -->
+
   <meta charset="UTF-8">
   <title>Title</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 </head>
 <body>
-<p>INDEX</p>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7JKFS5"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="ui segment container">
+  <button id="signInButton">Google Login</button>
+  <button id="signOutButton">Logout</button>
+  <p id="loginStatus"></p>
+</header>
+<div class="ui container">
+  <div class="ui form">
+
+    <div class="fields">
+      <div class="field">
+        <label>姓</label>
+        <input type="text" placeholder="姓">
+      </div>
+      <div class="field">
+        <label>名</label>
+        <input type="text" placeholder="名">
+      </div>
+    </div>
+
+    <div class="fields">
+      <div class="field">
+        <label>セイ</label>
+        <input type="text" placeholder="セイ">
+      </div>
+      <div class="field">
+        <label>メイ</label>
+        <input type="text" placeholder="メイ">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Gender</label>
+      <div class="ui selection dropdown">
+        <input type="hidden" name="gender">
+        <i class="dropdown icon"></i>
+        <div class="default text">Gender</div>
+        <div class="menu">
+          <div class="item" data-value="1">Male</div>
+          <div class="item" data-value="0">Female</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fields">
+      <div class="grouped fields">
+        <label for="fruit">好きな果物:</label>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="fruit" checked="" tabindex="0" class="hidden">
+            <label>りんご</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="fruit" tabindex="0" class="hidden">
+            <label>みかん</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="fruit" tabindex="0" class="hidden">
+            <label>洋ナシ</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="fruit" tabindex="0" class="hidden">
+            <label>グレープフルーツ</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fields">
+      <div class="ui checkbox">
+        <input type="checkbox" name="example">
+        <label>Make my profile visible</label>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+$('.ui.radio.checkbox').checkbox();
+$('.ui.dropdown').dropdown();
+$('.ui.checkbox').checkbox();
+
+updateSigninStatus = isSignedIn => {
+  console.log('update signin status')
+  if (isSignedIn) {
+    getUserData();
+    document.querySelector('#loginStatus').innerHTML = `ログイン済み`
+  } else {
+    document.querySelector('#loginStatus').innerHTML = `未ログイン`
+  }
+}
+
+getUserData = () => {
+  const profile = gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile()
+  const currentUserData = {
+    name: profile.getName(),
+    email: profile.getEmail()
+  }
+}
+
+window.gapi.load('client:auth2', () => {
+  gapi.client.init({
+    client_id: "617085169896-g45r6jja7ov7phh4jr28edg1c2bfijom.apps.googleusercontent.com",
+    scope: "email"
+  }).then(() => {
+    const auth = window.gapi.auth2.getAuthInstance()
+    auth.isSignedIn.listen(updateSigninStatus)
+    updateSigninStatus(auth.isSignedIn.get());
+
+
+  });
+});
+
+document.querySelector('#signInButton').addEventListener('click', () => {
+  window.gapi.auth2.getAuthInstance().signIn();
+});
+
+document.querySelector('#signOutButton').addEventListener('click', () => {
+  window.gapi.auth2.getAuthInstance().signOut()
+})
+
+</script>
 </body>
 </html>
