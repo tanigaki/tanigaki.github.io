@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://apis.google.com/js/api.js"></script>
   <!-- Custom Dimension Settings -->
   <script>
   var dataLayer = dataLayer || [];
@@ -11,9 +10,10 @@
   });
   </script>
   <!-- End Custom Dimension Settings -->
-  
+
   <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
+  <script>
+  (function (w, d, s, l, i) {
     w[l] = w[l] || [];
     w[l].push({
       'gtm.start':
@@ -25,7 +25,8 @@
     j.src =
       'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
     f.parentNode.insertBefore(j, f);
-  })(window, document, 'script', 'dataLayer', 'GTM-P7JKFS5');</script>
+  })(window, document, 'script', 'dataLayer', 'GTM-P7JKFS5');
+  </script>
   <!-- End Google Tag Manager -->
 
   <meta charset="UTF-8">
@@ -36,6 +37,7 @@
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script src="https://apis.google.com/js/api.js"></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -150,7 +152,7 @@ getUserData = () => {
   return currentUserData.email
 }
 
-window.gapi.load('client:auth2', () => {
+gapi.load('client:auth2', () => {
   gapi.client.init({
     client_id: "617085169896-g45r6jja7ov7phh4jr28edg1c2bfijom.apps.googleusercontent.com",
     scope: "email"
