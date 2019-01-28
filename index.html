@@ -52,123 +52,152 @@
 </header>
 <div class="ui container">
   <div class="ui form">
-
-    <div class="fields">
-      <div class="field">
-        <label>姓</label>
-        <input
-        type="text"
-        placeholder="姓"
-        class="gtm-tracking-input"
-        name="family-name"
-        data-label="１姓"
-        required>
-      </div>
-      <div class="field">
-        <label>名</label>
-        <input
-        type="text"
-        placeholder="名"
-        class="gtm-tracking-input"
-        name="first-name"
-        data-label="１名"
-        required>
-      </div>
-    </div>
-
-    <div class="fields">
-      <div class="field">
-        <label>セイ</label>
-        <input
-        type="text"
-        placeholder="セイ"
-        class="gtm-tracking-input"
-        name="family-name-kana"
-        data-label="セイ">
-      </div>
-      <div class="field">
-        <label>メイ</label>
-        <input
-        type="text"
-        placeholder="メイ"
-        class="gtm-tracking-input"
-        name="first-name-kana"
-        data-label="メイ">
-      </div>
-    </div>
-
-    <div class="field">
-      <label>Gender</label>
-      <select
-      class="gtm-tracking-input"
-      name="gender"
-      data-label="性別">
-        <option value="1">Male</option>
-        <option value="2">Female</option>
-      </select>
-    </div>
-
-    <div class="fields">
-      <div class="grouped fields">
-        <label for="fruit">好きな果物:</label>
+    <h1>フォームその1</h1>
+    <form class="gtm-tracking-form" data-label="フォームその1">
+      <div class="fields">
         <div class="field">
-          <div class="ui radio checkbox">
-            <input
-            type="radio"
-            name="fruit"
-            checked=""
-            tabindex="0"
-            class="hidden gtm-tracking-input"
-            data-label="好きな果物">
-            <label>りんご</label>
-          </div>
+          <label>姓</label>
+          <input
+          type="text"
+          placeholder="姓"
+          class="gtm-tracking-input"
+          name="family-name"
+          data-label="１姓"
+          required
+          autofocus>
         </div>
         <div class="field">
-          <div class="ui radio checkbox">
-            <input
-            type="radio"
-            name="fruit"
-            tabindex="0"
-            class="hidden gtm-tracking-input"
-            data-label="好きな果物">
-            <label>みかん</label>
-          </div>
-        </div>
-        <div class="field">
-          <div class="ui radio checkbox">
-            <input
-            type="radio"
-            name="fruit"
-            tabindex="0"
-            class="hidden gtm-tracking-input"
-            data-label="好きな果物">
-            <label>洋ナシ</label>
-          </div>
-        </div>
-        <div class="field">
-          <div class="ui radio checkbox">
-            <input
-            type="radio"
-            name="fruit"
-            tabindex="0"
-            class="hidden gtm-tracking-input"
-            data-label="好きな果物">
-            <label>グレープフルーツ</label>
-          </div>
+          <label>名</label>
+          <input
+          type="text"
+          placeholder="名"
+          class="gtm-tracking-input"
+          name="first-name"
+          data-label="１名"
+          required>
         </div>
       </div>
-    </div>
 
-    <div class="fields">
-      <div class="ui checkbox">
-        <input
-        type="checkbox"
-        name="example"
-        class="gtm-tracking-input"
-        data-label="利用規約同意">
-        <label>利用規約に同意します。</label>
+      <div class="fields">
+        <div class="field">
+          <label>セイ</label>
+          <input
+          type="text"
+          placeholder="セイ"
+          class="gtm-tracking-input"
+          name="family-name-kana"
+          data-label="セイ">
+        </div>
+        <div class="field">
+          <label>メイ</label>
+          <input
+          type="text"
+          placeholder="メイ"
+          class="gtm-tracking-input"
+          name="first-name-kana"
+          data-label="メイ">
+        </div>
       </div>
-    </div>
+
+      <div class="field">
+        <label>Gender</label>
+        <select
+        class="gtm-tracking-input"
+        name="gender"
+        data-label="性別">
+          <option value="1">Male</option>
+          <option value="2">Female</option>
+        </select>
+      </div>
+
+      <div class="fields">
+        <div class="grouped fields">
+          <label for="fruit">好きな果物:</label>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input
+              type="radio"
+              name="fruit"
+              checked=""
+              tabindex="0"
+              class="hidden gtm-tracking-input"
+              data-label="好きな果物">
+              <label>りんご</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input
+              type="radio"
+              name="fruit"
+              tabindex="0"
+              class="hidden gtm-tracking-input"
+              data-label="好きな果物">
+              <label>みかん</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input
+              type="radio"
+              name="fruit"
+              tabindex="0"
+              class="hidden gtm-tracking-input"
+              data-label="好きな果物">
+              <label>洋ナシ</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input
+              type="radio"
+              name="fruit"
+              tabindex="0"
+              class="hidden gtm-tracking-input"
+              data-label="好きな果物">
+              <label>グレープフルーツ</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fields">
+        <div class="ui checkbox">
+          <input
+          type="checkbox"
+          name="example"
+          class="gtm-tracking-input"
+          data-label="利用規約同意">
+          <label>利用規約に同意します。</label>
+        </div>
+      </div>
+    </form>
+
+    <h1>フォームその2</h1>
+    <form class="gtm-tracking-form" data-label="フォームその2">
+      <div class="fields">
+        <div class="field">
+          <label>姓</label>
+          <input
+          type="text"
+          placeholder="姓"
+          class="gtm-tracking-input"
+          name="family-name"
+          data-label="１姓"
+          required>
+        </div>
+        <div class="field">
+          <label>名</label>
+          <input
+          type="text"
+          placeholder="名"
+          class="gtm-tracking-input"
+          name="first-name"
+          data-label="１名"
+          required>
+        </div>
+      </div>
+    </form>
 
   </div>
 </div>
@@ -217,17 +246,32 @@ document.querySelector('#signOutButton').addEventListener('click', () => {
 })
 
 // gtm event tracking
-const inputs = [...document.querySelectorAll('.gtm-tracking-input')]
-inputs.map(input => {
-  const data = {
-    'event': 'onfocus-form',
-    'inputLabel': input.dataset.label
-  }
-  input.onfocus = () => {
-    console.log(data)
-    // dataLayer.push(data)
-  }
-})
+// const inputs = [...document.querySelectorAll('.gtm-tracking-input')]
+//
+// function closest(node, selector) {
+//   return (node.closest || function (_selector) {
+//     do {
+//       if ((node.matches || node.msMatchesSelector).call(node, _selector)) {
+//         return node;
+//       }
+//       node = node.parentElement || node.parentNode;
+//     } while (node !== null && node.nodeType === 1);
+//
+//     return null;
+//   }).call(node, selector);
+// }
+//
+// inputs.map(input => {
+//   input.onfocus = () => {
+//     const formName = closest(input, '.gtm-tracking-form').dataset.label
+//     const data = {
+//       'event': 'onfocus-form',
+//       'inputLabel': input.dataset.label,
+//       'formName': formName
+//     }
+//     console.log(data)
+//   }
+// })
 
 </script>
 </body>
