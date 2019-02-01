@@ -36,6 +36,11 @@
   crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
   <script src="https://apis.google.com/js/api.js"></script>
+  <style>
+  input[type="button"]:focus {
+    border: 4px solid red;
+  }
+  </style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -170,6 +175,12 @@
           <label>利用規約に同意します。</label>
         </div>
       </div>
+
+      <div class="fields">
+        <input type="button" class="hoge gtm-tracking-input" value="Click Me!" data-from="I am the value from the left button"/>
+        <input type="text" id="hoge-target" class="gtm-tracking-input">
+      </div>
+
     </form>
 
     <h1>フォームその2</h1>
@@ -243,6 +254,11 @@ document.querySelector('#signInButton').addEventListener('click', () => {
 document.querySelector('#signOutButton').addEventListener('click', () => {
   window.gapi.auth2.getAuthInstance().signOut()
 })
+
+document.querySelector('.hoge').onclick = function () {
+  console.log(this)
+  document.querySelector('#hoge-target').value = this.dataset.from
+}
 
 // gtm event tracking
 // const inputs = [...document.querySelectorAll('.gtm-tracking-input')]
